@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Instant Classroom Jeopardy</title>
+    <link rel="stylesheet" href="jeopardy/jeopardyStylesheet.css">
+</head>
+<body>
+    <h1>Instant Classroom Jeopardy</h1>
+    <hr>
+    <div id="questionScreen">
+        <h1><span id="questionValue">100</span> Point Question</h1>
+        <h1 id="questionSpot">What is the capital of Arizona?</h1>
+        <h1 id="answerHider">_____</h1>
+        <h1 id="answerSpot">Phoenix</h1>
+        <button id="seeAnswer" onClick="seeAnswer()">See answer</button>
+        <button id="goBack" onClick="displayScreen(mainScreen)">Go back</button>  
+    </div>
+
+    <div id="settingsScreen">
+        <h2>Settings modal</h2>
+        <hr>
+        <button onClick="resetGame()">Reset</button>  
+        <hr>
+        <button id="goBack" onClick="displayScreen(mainScreen)">Go back</button> 
+    </div>
+
+    <div id="mainScreen">
+        <div id="gameboard">
+            <div id="column1" class="column">
+                <div class="categorySquare">
+                    <h1 class="categoryLabel" id="cat1" onClick="categoryChange(id)">A</h1>
+                </div>
+                <div class="questionSquare" id="boxC1Q1">
+                    <h1 class="questionLabel" id="question0" onClick="selectIt(id);">100</h1>
+                </div>
+                <div class="questionSquare" id="boxC1Q2">
+                    <h1 class="questionLabel" id="question1" onClick="selectIt(id);">200</h1>
+                </div>
+                <div class="questionSquare" id="boxC1Q3">
+                    <h1 class="questionLabel" id="question2" onClick="selectIt(id);">300</h1>
+                </div>
+                <div class="questionSquare" id="boxC1Q4">
+                    <h1 class="questionLabel" id="question3" onClick="selectIt(id);">400</h1>
+                </div>
+                <div class="questionSquare" id="boxC1Q5">
+                    <h1 class="questionLabel" id="question4" onClick="selectIt(id);">500</h1>
+                </div>
+            </div>
+            <div id="column2" class="column">
+                <div class="categorySquare">
+                    <h1 class="categoryLabel" id="cat2" onClick="categoryChange(id)">B</h1>
+                </div>
+                <div class="questionSquare" id="boxC2Q1">
+                    <h1 class="questionLabel" id="question5" onClick="selectIt(id);">100</h1>
+                </div>
+                <div class="questionSquare" id="boxC2Q2">
+                    <h1 class="questionLabel" id="question6" onClick="selectIt(id);">200</h1>
+                </div>
+                <div class="questionSquare" id="boxC2Q3">
+                    <h1 class="questionLabel" id="question7" onClick="selectIt(id);">300</h1>
+                </div>
+                <div class="questionSquare" id="boxC2Q4">
+                    <h1 class="questionLabel" id="question8" onClick="selectIt(id);">400</h1>
+                </div>
+                <div class="questionSquare" id="boxC2Q5">
+                    <h1 class="questionLabel" id="question9" onClick="selectIt(id);">500</h1>
+                </div>
+            </div>
+            <div id="column3" class="column">
+                <div class="categorySquare">
+                    <h1 class="categoryLabel" id="cat3" onClick="categoryChange(id)">C</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question10" onClick="selectIt(id);">100</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question11" onClick="selectIt(id);">200</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question12" onClick="selectIt(id);">300</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question13" onClick="selectIt(id);">400</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question14" onClick="selectIt(id);">500</h1>
+                </div>
+            </div>
+            <div id="column4" class="column">
+                <div class="categorySquare">
+                    <h1 class="categoryLabel" id="cat4" onClick="categoryChange(id)">D</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question15" onClick="selectIt(id);">100</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question16" onClick="selectIt(id);">200</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question17" onClick="selectIt(id);">300</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question18" onClick="selectIt(id);">400</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question19" onClick="selectIt(id);">500</h1>
+                </div>
+            </div>
+            <div id="column5" class="column">
+                <div class="categorySquare">
+                    <h1 class="categoryLabel" id="cat5" onClick="categoryChange(id)">E</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question20" onClick="selectIt(id);">100</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question21" onClick="selectIt(id);">200</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question22" onClick="selectIt(id);">300</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question23" onClick="selectIt(id);">400</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question24" onClick="selectIt(id);">500</h1>
+                </div>
+            </div>
+            <div id="column6" class="column">
+                <div class="categorySquare">
+                    <h1 class="categoryLabel" id="cat6" onClick="categoryChange(id)">F</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question25" onClick="selectIt(id);">100</h1>
+                </div>
+                <div class="questionSquare"> 
+                    <h1 class="questionLabel" id="question26" onClick="selectIt(id);">200</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question27" onClick="selectIt(id);">300</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question28" onClick="selectIt(id);">400</h1>
+                </div>
+                <div class="questionSquare">
+                    <h1 class="questionLabel" id="question29" onClick="selectIt(id);">500</h1>
+                </div>
+            </div>
+        </div>
+<!--     <button onClick="displayScreen(settingsScreen)">Settings</button> -->
+        <button onClick="resetGame()">Reset</button>  
+        <button onClick="displayScreen(userInputScreen)">New Game</button>
+    </div>
+
+    <div id="userInputScreen">
+        <h1>New Game</h1>
+        <h2>To Begin <br> Copy-Paste Questions here</h2>
+        <textarea id="userQuestions" placeholder="Founding of America? 1776" rows="20" cols="10">
+How do you add questions? Copy-paste Q/A pairs like this:
+Founding of America? 1776
+Battle of Hastings? 1066
+How do you change category names? Click on them.
+        </textarea>
+        <br>
+        <!-- <button onClick="displayScreen(settingsScreen)">Settings</button>-->
+        <button onClick="resetGame()">Reset</button>  
+        <button onClick="inputTheQuestions()">START</button>
+        <button onClick="testRun()">Test Run</button>
+        <br>
+        <h3 id="errorAlert">Error: You need to type questions first.</h3>
+    </div>
+    <hr>
+    <div id="debugSettings">
+        <button onClick="displayScreen(settingsScreen)">DEBUG: Display settings screen</button>
+        <button onClick="displayScreen(questionScreen)">DEBUG: Display question screen</button>
+        <button onClick="displayScreen(userInputScreen)">DEBUG: Display user input screen</button>
+    </div>
+    <footer>Copyright 2022 <a rel="noreferrer" href="/index.html">Patrick Mooney</a></footer>
+    <script src="jeopardy/jeopardyScripts.js"></script>
+</body>
+</html>
+
+
