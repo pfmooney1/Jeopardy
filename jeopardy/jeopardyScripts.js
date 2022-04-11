@@ -13,9 +13,10 @@ const category4 = document.getElementById("cat4");
 const category5 = document.getElementById("cat5");
 const category6 = document.getElementById("cat6");
 
+displayScreen(userInputScreen);
 
-function writeCategories(param){
-    if (param === "reset") {
+function writeCategories(button){
+    if (button === "reset") {
         category1.innerHTML = "A";
         category2.innerHTML = "B";
         category3.innerHTML = "C";
@@ -23,7 +24,7 @@ function writeCategories(param){
         category5.innerHTML = "E";
         category6.innerHTML = "F";
     }
-    else if (param === "testRun") {
+    else if (button === "testRun") {
         category1.innerHTML = "History";
         category2.innerHTML = "Science";
         category3.innerHTML = "Foreign Lang.";
@@ -32,8 +33,6 @@ function writeCategories(param){
         category6.innerHTML = "English";
     }
 }
-
-displayScreen(userInputScreen);
 
 function categoryChange(id){
     document.getElementById(id).innerHTML = prompt("Chose a new category name:", "Vocab");
@@ -78,23 +77,26 @@ function inputTheQuestions(){
         errorMessage.style.display = "none";
     }
 }
-function resetGame() {
+function resetBoard() {
     let text;
-    if (confirm("Are you sure?") == true) {
-        writeCategories("reset");
-        arrayOfQAPairs = [];
-        var allGameSquares = document.getElementsByClassName("questionLabel");
-        for (let i = 0; i < allGameSquares.length; i++) {
-            allGameSquares[i].style.visibility = "visible";
-        }
+    writeCategories("reset");
+    arrayOfQAPairs = [];
+    var allGameSquares = document.getElementsByClassName("questionLabel");
+    for (let i = 0; i < allGameSquares.length; i++) {
+        allGameSquares[i].style.visibility = "visible";
+    }
     document.getElementById("userQuestions").value = 
 `How do you add questions? Copy-paste Q/A pairs like this:
 Founding of America? 1776
 Battle of Hastings? 1066
 How do you change category names? Click on them.`
-        displayScreen(userInputScreen);
+    displayScreen(userInputScreen);
+}
+function resetConfirm() {
+    let text;
+    if (confirm("Are you sure?") == true) {
+        resetBoard();
     }
-
 }
 function seeAnswer() {
     document.getElementById("answerSpot").style.display = "block";
@@ -107,7 +109,7 @@ function selectIt(id) {
     displayScreen(questionScreen);
 }
 function testRun(){
-    resetGame();
+    resetBoard();
     let questions = 
 `When was America founded? 1776
 Who was the first president? George Washington

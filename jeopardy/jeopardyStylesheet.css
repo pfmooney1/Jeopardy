@@ -50,6 +50,10 @@ button {
 }
 
 /* Classes */
+h1.categoryLabel {
+    margin: 0em;
+    padding: 7%;
+}
 .categorySquare {
     background-color: #003D8C;
     border: 2px solid black;
@@ -63,14 +67,19 @@ button {
     grid-gap: 2px;
 }
 h1.questionLabel {
-    height: 100%;
+    margin: 0em;
+    padding: 7%;
 }
 .questionSquare {
+    align-items: stretch;
     background-color: #003D8C;
     border: 2px solid black;
     border-radius: 5px;
     box-shadow: 2px 2px 2px #00000090;
     display: grid;
+    height: 70px;
+    justify-content: stretch;
+    padding: 0em;
 }
 .questionSquare:hover, .categorySquare:hover {
     border: 3px solid black;
