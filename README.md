@@ -1,6 +1,6 @@
 # Jeopardy
 
-##Instant Classroom Jeopardy
+## Instant Classroom Jeopardy
 
 ### About The Project
 I made this to make playing "Review Jeopardy" games with my classes of students easier. In the past you would have had to fiddle with typing and formatting and setting up dozens of slides.
